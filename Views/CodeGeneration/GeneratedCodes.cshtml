@@ -1,0 +1,29 @@
+﻿@model VCQRU.Models.GeneratedCodesViewModel
+
+<h1>Generated Unique 13-Digit Codes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Series Number</th>
+            <th>Code 1</th>
+            <th>Code 2</th>
+            <th>Generated Date</th>
+            <th>Batch Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var code in Model.Codes)
+        {
+            <tr>
+                <td>@code.SeriesNumber</td>
+                <td>@code.Code1</td>
+                <td>@code.Code2</td>
+                <td>@code.GeneratedDate</td>
+                <td>@code.BatchNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("GenerateCodes", "CodeGeneration", new { companyId = Model.BatchNumber })" class="btn btn-secondary">Generate More Codes</a>

@@ -1,0 +1,107 @@
+﻿@* 
+@model List<VCQRU.Models.SubscriptionService>
+
+<h2>Subscribe to Services</h2>
+
+<form method="post" asp-action="Subscribe">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Service Name</th>
+                <th>Subscribe</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var service in Model)
+            {
+                <tr>
+                    <td>@service.ServiceName</td>
+                    <td>
+                        <button type="submit" name="id" value="@service.Id" class="btn btn-primary">Subscribe</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+ *@
+
+@* @model List<VCQRU.Models.SubscriptionService>
+
+<h2>Subscribe to Services</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+<form method="post" asp-action="Subscribe">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Service Name</th>
+                <th>Subscribe</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var service in Model)
+            {
+                <tr>
+                    <td>@service.ServiceName</td>
+                    <td>
+                        <button type="submit" name="id" value="@service.Id" class="btn btn-primary">Subscribe</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+ *@
+
+@model List<VCQRU.Models.SubscriptionService>
+
+<h2>Subscribe to Services</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div id="successMessage" class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+<form method="post" asp-action="Subscribe">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Service Name</th>
+                <th>Subscribe</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var service in Model)
+            {
+                <tr>
+                    <td>@service.ServiceName</td>
+                    <td>
+                        <button type="submit" name="id" value="@service.Id" class="btn btn-primary">Subscribe</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var message = document.getElementById('successMessage');
+            if (message) {
+                setTimeout(function () {
+                    message.style.display = 'none';
+                }, 5000); // Hide after 10 seconds (10000 milliseconds)
+            }
+        });
+    </script>
+}

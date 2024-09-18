@@ -1,0 +1,67 @@
+﻿@model VCQRU.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product Registration";
+}
+
+<h1>Register Your Product</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Pro_Name" class="control-label"></label>
+        <input asp-for="Pro_Name" class="form-control" />
+        <span asp-validation-for="Pro_Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Display_Product" class="control-label"></label>
+        <input asp-for="Display_Product" class="form-control" />
+        <span asp-validation-for="Display_Product" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Display_Series" class="control-label"></label>
+        <input asp-for="Display_Series" class="form-control" />
+        <span asp-validation-for="Display_Series" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BatchSize" class="control-label"></label>
+        <input asp-for="BatchSize" class="form-control" />
+        <span asp-validation-for="BatchSize" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Pro_Desc" class="control-label"></label>
+        <input asp-for="Pro_Desc" class="form-control" />
+        <span asp-validation-for="Pro_Desc" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Comp_ID" class="control-label"></label>
+        <input asp-for="Comp_ID" class="form-control" />
+        <span asp-validation-for="Comp_ID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Dispatch_Location" class="control-label"></label>
+        <input asp-for="Dispatch_Location" class="form-control" />
+        <span asp-validation-for="Dispatch_Location" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Pro_Entry_Date" class="control-label"></label>
+        <input asp-for="Pro_Entry_Date" class="form-control" type="date" />
+        <span asp-validation-for="Pro_Entry_Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Register Product" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

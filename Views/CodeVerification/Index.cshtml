@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Code Verification";
+}
+
+<h2>Check Code</h2>
+
+<form asp-action="CheckCode" method="post">
+    <div class="form-group">
+        <label for="code">Enter 13-digit Code:</label>
+        <input type="text" class="form-control" id="code" name="code" maxlength="13" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Check Code</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info mt-3">
+        @ViewBag.Message
+    </div>
+}
